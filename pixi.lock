@@ -452,10 +452,13 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/zlib-1.3.1-hb9d3cd8_2.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/zstandard-0.23.0-py311hbc35293_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/zstd-1.5.6-ha6fb4c9_0.conda
+      - pypi: https://files.pythonhosted.org/packages/0f/e0/5eba68801e0858c01a1f4147714e83edc57137e93d0a7141b2e046710cfb/bm25s-0.2.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/05/14/7888378e644bce57f8475eeb186a9fb88c38abae962dd20c3c536b9c5cc4/llama_index_embeddings_huggingface-0.3.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/01/02/b35019650e66807f2cd5b557018b516dc38ccdaa87d42e78672d221c5c9e/llama_index_llms_ollama-0.3.6-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/dc/70/49bdcaf88559654260027cfce1f9c2a88fbf0fe94136a49eff4ad552f1de/llama_index_retrievers_bm25-0.4.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/ed/39/0298803b003749bc6b50dca64d5ad28ae4c03a3fd55f8570406f6ab8be19/llama_index_vector_stores_chroma-0.3.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/6a/ca/d22905ac3f768523f778189d38c9c6cd9edf4fa9dd09cb5a3fc57b184f90/ollama-0.3.3-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/b2/9b/91b46ea4d920014181b2d7256086a68ae1374f40bfeebee13497674511c4/PyStemmer-2.2.0.3-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl
 packages:
 - kind: conda
   name: _libgcc_mutex
@@ -1330,6 +1333,32 @@ packages:
   - pkg:pypi/blinker?source=hash-mapping
   size: 14707
   timestamp: 1715091300511
+- kind: pypi
+  name: bm25s
+  version: 0.2.3
+  url: https://files.pythonhosted.org/packages/0f/e0/5eba68801e0858c01a1f4147714e83edc57137e93d0a7141b2e046710cfb/bm25s-0.2.3-py3-none-any.whl
+  sha256: 2d3b40268238f58adc393f15dae067416401a440a6c459c2caa0965e4d2ca155
+  requires_dist:
+  - scipy
+  - numpy
+  - orjson ; extra == 'core'
+  - tqdm ; extra == 'core'
+  - pystemmer ; extra == 'core'
+  - numba ; extra == 'core'
+  - black ; extra == 'dev'
+  - pytrec-eval ; extra == 'evaluation'
+  - orjson ; extra == 'full'
+  - tqdm ; extra == 'full'
+  - pystemmer ; extra == 'full'
+  - numba ; extra == 'full'
+  - huggingface-hub ; extra == 'full'
+  - black ; extra == 'full'
+  - jax[cpu] ; extra == 'full'
+  - pytrec-eval ; extra == 'full'
+  - huggingface-hub ; extra == 'hf'
+  - jax[cpu] ; extra == 'selection'
+  - pystemmer ; extra == 'stem'
+  requires_python: '>=3.8'
 - kind: conda
   name: brotli
   version: 1.1.0
@@ -5158,6 +5187,16 @@ packages:
   size: 9623
   timestamp: 1725327580797
 - kind: pypi
+  name: llama-index-retrievers-bm25
+  version: 0.4.0
+  url: https://files.pythonhosted.org/packages/dc/70/49bdcaf88559654260027cfce1f9c2a88fbf0fe94136a49eff4ad552f1de/llama_index_retrievers_bm25-0.4.0-py3-none-any.whl
+  sha256: 64c0b6435d15568156c2ef2d0127eacc33524fe7be56a20b5254dc1601d05846
+  requires_dist:
+  - bm25s>=0.2.0,<0.3.0
+  - llama-index-core>=0.11.0,<0.12.0
+  - pystemmer>=2.2.0.1,<3.0.0.0
+  requires_python: '>=3.8.1,<4.0'
+- kind: pypi
   name: llama-index-vector-stores-chroma
   version: 0.3.0
   url: https://files.pythonhosted.org/packages/ed/39/0298803b003749bc6b50dca64d5ad28ae4c03a3fd55f8570406f6ab8be19/llama_index_vector_stores_chroma-0.3.0-py3-none-any.whl
@@ -7161,6 +7200,11 @@ packages:
   - pkg:pypi/pysocks?source=hash-mapping
   size: 18981
   timestamp: 1661604969727
+- kind: pypi
+  name: pystemmer
+  version: 2.2.0.3
+  url: https://files.pythonhosted.org/packages/b2/9b/91b46ea4d920014181b2d7256086a68ae1374f40bfeebee13497674511c4/PyStemmer-2.2.0.3-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+  sha256: f74f6e0bb2034880bf4688ab5b95f97bb90952086682a93f080b260b454f933e
 - kind: conda
   name: python
   version: 3.11.10
