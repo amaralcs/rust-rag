@@ -8,12 +8,10 @@ version = "0.1.0"
 [tasks]
 
 [dependencies]
-llama-index = ">=0.11.22,<0.12"
 pandas = ">=2.2.3,<3"
 numpy = ">=1.26.4,<2"
 matplotlib = ">=3.9.2,<4"
 scipy = ">=1.14.1,<2"
-sentence-transformers = ">=3.2.1,<4"
 ipykernel = ">=6.29.5,<7"
 black = ">=24.10.0,<25"
 chromadb = ">=0.5.18,<0.6"
@@ -24,7 +22,10 @@ arize-phoenix = ">=5.7.0,<6"
 mlflow = ">=2.17.2,<3"
 
 [pypi-dependencies]
-llama-index-llms-ollama = ">=0.3.6, <0.4"
-llama-index-embeddings-huggingface = ">=0.3.1, <0.4"
-llama-index-vector-stores-chroma = ">=0.3.0, <0.4"
-llama-index-retrievers-bm25 = ">=0.4.0, <0.5"
+llama-index-finetuning = ">=0.1.7, <0.2"
+llama-index-llms-ollama = ">=0.2.2, <0.3"
+llama-index-embeddings-huggingface = ">=0.2.3, <0.3"
+llama-index-vector-stores-chroma = ">=0.1.10, <0.2"
+llama-index-retrievers-bm25 = ">=0.2.2, <0.3"
+llama-index-core = ">=0.10.68.post1, <0.11"
+llama-index = ">=0.10.68, <0.11"
