@@ -1,8 +1,6 @@
-
-# pixi environments
-.pixi
-*.egg-info
 book/
 txt/
 chromadb/
 data/
+
+mlruns/
