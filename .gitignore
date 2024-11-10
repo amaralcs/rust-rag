@@ -2,5 +2,5 @@ book/
 txt/
 chromadb/
 data/
-
+models/
 mlruns/
